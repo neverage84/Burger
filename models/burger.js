@@ -6,6 +6,6 @@ orm.select("*", "burgers");
 orm.create("burgers", "burger_name", submitItem);
 
 // Find the buyer with the most pets.
-orm.update("burgers", devoured:true, id:this);
+orm.update("burgers", {devoured:true}, {id:this});
 
-module.exports = orm;
+module.exports = burger;
