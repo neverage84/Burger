@@ -18,12 +18,17 @@
           <div class="NotEaten"></div>
       <ul>
         {{#each burger}}
+            <div class="row">
             {{#unless devoured}}
             <li>
              {{id}}   
              {{burger_name}}
+             <button class="btn waves-effect waves-light black right" data-id="{{id}}">
+		        Devour It
+	        </button>
             </li>
             {{/unless}}
+            </div>
         {{/each}}
         </ul>
           
@@ -36,13 +41,16 @@
         <div class="card-content white-text">
           <span class="card-title">Burgers Devoured</span>
           <div class="Eaten"></div>
+          
       <ul>
         {{#each burger}}
             {{#if devoured}}
             <li>
              {{id}}   
              {{burger_name}}
-            </li>
+            
+             
+            </li> 
             {{/if}}
         {{/each}}
         </ul>
@@ -52,15 +60,20 @@
       </div>
     </div>
   </div>
-<div class="row">
+<div class="row center-align">
     <div class="row">
         
       <form class="col s12">
-        <div class="row center card">
-          <div class="input-field col s6">
+        <div class="row center card ">
+            
+          <div class="input-field col s12 ">
             <input id="input_text" type="text" data-length="30">
-            <label for="input_text">Input text</label>
-          </div>
+                <label for="input_text">Enter burger to eat then press Submit</label>
+                <button class="btn waves-effect waves-light black" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+         
         </div>
         </div>
         </div>
