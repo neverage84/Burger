@@ -1,16 +1,71 @@
-<h1 class="center-align">Burgers!</h1>
+<style>
+    body {
+        background-image:url("https://cgx3j41r03fwkmmdtoy3l6aq-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/burger.jpg");
+        background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+
+<h1 class="center-align white-text">EAT-DA BURGER</h1>
 <div class="container">
-<div class="row">
-      <div class="col s12">This div is 12-columns wide on all screen sizes</div>
-      <div class="col s6 NotEaten">Not Eaten</div>
+ <div class="row burger">
+    <div class="col s6">
+      <div class="card z-depth-5 medium red darken-4">
+        <div class="card-content white-text">
+          <span class="card-title">Burgers To Eat</span>
+          <div class="NotEaten"></div>
       <ul>
         {{#each burger}}
+            {{#unless devoured}}
             <li>
              {{id}}   
              {{burger_name}}
             </li>
+            {{/unless}}
         {{/each}}
         </ul>
-      <div class="col s6 Eaten">6-columns (one-half)</div>
+          
+        </div>
+        
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="card z-depth-5 medium black">
+        <div class="card-content white-text">
+          <span class="card-title">Burgers Devoured</span>
+          <div class="Eaten"></div>
+      <ul>
+        {{#each burger}}
+            {{#if devoured}}
+            <li>
+             {{id}}   
+             {{burger_name}}
+            </li>
+            {{/if}}
+        {{/each}}
+        </ul>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+<div class="row">
+    <div class="row">
+        
+      <form class="col s12">
+        <div class="row center card">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" data-length="30">
+            <label for="input_text">Input text</label>
+          </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+      
     </div>
 </div>
