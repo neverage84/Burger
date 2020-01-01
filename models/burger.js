@@ -5,7 +5,12 @@ var burger = {
         orm.all("burgers", function(res){
             cb(res);
         });
-    }
+    },
+    create: function(vals, cb) {
+        orm.create("burgers", "burger_name", vals, function(res) {
+          cb(res);
+        });
+      }
 }
 
 // Find a pet in the pets table by an animal_name of Rachel.

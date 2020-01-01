@@ -45,45 +45,30 @@ var orm = {
       
       cb(result);
     });
-  // },
-  // select: function(whatToSelect, tableInput) {
-  //   var queryString = "SELECT ?? FROM ??";
-  //   connection.query(queryString, [whatToSelect, tableInput], function(err, result) {
-  //     if (err) throw err;
-  //     console.log(result);
-  //   });
-  // },
-  // selectWhere: function(tableInput, colToSearch, valOfCol) {
-  //   var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+  },
+  create: function(table, cols, vals, cb) {
+    var queryString = "INSERT INTO " + table;
 
-  //   console.log(queryString);
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
 
-  //   connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
-  //     if (err) throw err;
-  //     console.log(result);
-  //   });
-  // },
+    console.log(queryString);
 
-  // create: function(table, cols, vals) {
-  //   var queryString = "INSERT INTO " + table;
+    connection.query(queryString, vals, function(err, result) {
+      if (err) {
+        throw err;
+      }
 
-  //   queryString += " (";
-  //   queryString += cols.toString();
-  //   queryString += ") ";
-  //   queryString += "VALUES (";
-  //   queryString += printQuestionMarks(1);
-  //   queryString += ") ";
+      cb(result);
+    });
 
-  //   console.log(queryString);
+  }
 
-  //   connection.query(queryString, vals, function(err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
 
-  //     console.log(result);
-  //   });
-  // },
   // update: function(table, objColVals, condition, cb) {
   //   var queryString = "UPDATE " + table;
 
@@ -100,7 +85,7 @@ var orm = {
 
   //     cb(result);
   //   });
-  }
+  // }
 };
 
 module.exports = orm;
