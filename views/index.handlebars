@@ -1,0 +1,16 @@
+<h1 class="center-align">Burgers!</h1>
+<div class="container">
+<div class="row">
+      <div class="col s12">This div is 12-columns wide on all screen sizes</div>
+      <div class="col s6 NotEaten">Not Eaten</div>
+      <ul>
+        {{#each burger}}
+            <li>
+             {{id}}   
+             {{burger_name}}
+            </li>
+        {{/each}}
+        </ul>
+      <div class="col s6 Eaten">6-columns (one-half)</div>
+    </div>
+</div>
