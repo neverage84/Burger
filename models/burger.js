@@ -7,15 +7,15 @@ var burger = {
         });
     },
     create: function(vals, cb) {
-        orm.create("burgers", "burger_name", vals, function(res) {
+        orm.create("burgers", "burger_name", vals ,function(res) {
           cb(res);
         });
       },
-      update: function(condition, cb) {
-        orm.update("burgers", {devoured:true}, condition, function(res) {
-          cb(res);
-        });
-    }
+    //   update: function(condition, cb) {
+    //     orm.update("burgers", {devoured:true}, condition, function(res) {
+    //       cb(res);
+    //     });
+    // }
 
 
 }
