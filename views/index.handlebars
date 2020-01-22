@@ -6,6 +6,8 @@
         background-attachment: fixed;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
+
+  
 </style>
 
 <h1 class="center-align white-text"><i class="material-icons medium">local_dining</i>EAT-DA-BURGER</h1>
@@ -16,22 +18,28 @@
         <div class="card-content white-text">
           <span class="card-title">Burgers To Eat</span>
           <div class="NotEaten"></div>
+    
       <ul>
         {{#each burger}}
             <div class="row">
             {{#unless devoured}}
+            
             <li>
              {{id}}   
              {{burger_name}}
-             <button class="btn waves-effect waves-light black right Devour" value="{{id}}">
+             <form class="devour-no">
+               <input  type="hidden" class="burger_id" type="text" value="{{id}}">
+                <button class="btn waves-effect waves-light black right Devour" >
 		        Devour It
-	        </button>
+	            </button>
+       
             </li>
+            </form>
             {{/unless}}
             </div>
         {{/each}}
         </ul>
-          
+       
         </div>
         
       </div>

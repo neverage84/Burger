@@ -11,11 +11,11 @@ var burger = {
           cb(res);
         });
       },
-    //   update: function(condition, cb) {
-    //     orm.update("burgers", {devoured:true}, condition, function(res) {
-    //       cb(res);
-    //     });
-    // }
+      update: function(condition, cb) {
+        orm.update("burgers", {devoured:true}, condition, function(res) {
+          cb(res);
+        });
+    }
 
 
 }
