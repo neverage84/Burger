@@ -1,14 +1,3 @@
-<style>
-    body {
-        background-image:url("https://cgx3j41r03fwkmmdtoy3l6aq-wpengine.netdna-ssl.com/wp-content/uploads/2015/09/burger.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-
-  
-</style>
 
 <h1 class="center-align white-text"><i class="material-icons medium">local_dining</i>EAT-DA-BURGER</h1>
 <div class="container">
@@ -22,14 +11,15 @@
       <ul>
         {{#each burger}}
             <div class="row">
-            {{#unless devoured}}
+            {{#unless this.devoured}}
             
             <li>
-             {{id}}   
-             {{burger_name}}
-             <form class="devour-no">
-               <input  type="hidden" class="burger_id" type="text" value="{{id}}">
-                <button class="btn waves-effect waves-light black right Devour" >
+              <form class="devour-no">
+             {{this.id}}   
+             {{this.burger_name}}
+             
+               <input  type="hidden" class="burger_id" type="text" value="{{this.id}}">
+                <button type="submit" class="btn waves-effect waves-light black right Devour" >
 		        Devour It
 	            </button>
        
@@ -90,3 +80,5 @@
       
     </div>
 </div>
+
+

@@ -40,13 +40,10 @@ router.get("/", function(req, res) {
 
 
 
-router.get("/api/burgers/:buttonid", function(req, res) {
-    console.log(req.params.buttonid);
-    var condition = "id = " + $(this).val();
-    
-  
-    console.log("condition", condition);
-    res.redirect("/");
+router.put("/burgers/:id", function(req, res) {
+    console.log(req.params.id);
+    var condition = "id=" + req.params.id;
+
     burger.update(
       condition,
       function(result) {
@@ -56,8 +53,7 @@ router.get("/api/burgers/:buttonid", function(req, res) {
         }
         res.status(200).end();
   
-      }
-    );
+      })
   });
 
 
