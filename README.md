@@ -10,6 +10,8 @@
 
 * The app will store every burger in a database, whether devoured or not.
 
+![Alt Text](https://github.com/neverage84/Burger/blob/master/EatDaBurger!.gif?raw=true)
+
 #### TECHNOLOGIES USED
 MVC setup with express, handlebars, MySQL, jQuery, JavaScript, Node.js, HTML, and Materialize CSS.
 
